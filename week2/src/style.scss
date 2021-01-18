@@ -1,13 +1,50 @@
-.Pagination{
-    display: table-cell;
-    list-style: none;
-    border: 1px;
-    border-style: solid;
+.Pagination {
+  display: table-cell;
+  list-style: none;
+  border: 1px;
+  border-style: solid;
 }
-.chosen{
-    padding: 5px;    
-    color: #FF0000;
+.chosen {
+  padding: 5px;
+  color: #ff0000;
 }
-.unchosen{
-    background-color: #FFF;
+.unchosen {
+  background-color: #fff;
+}
+.listitem {
+  width: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.hidden {
+  display: none;
+}
+.Paginationbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.Edit {
+  color: black;
+  margin-left: 10px;
+}
+.Delete {
+  color: black;
+  margin-left: 10px;
+}
+.time {
+  margin-left: 10px;
+}
+
+#root {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

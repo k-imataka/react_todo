@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import "./reset.css";
 import "./style.scss";
 import * as serviceWorker from "./serviceWorker";
 
@@ -110,7 +111,7 @@ const Pagination: React.FC<PaginationType> = (props) => {
   ));
 
   return (
-    <div>
+    <div className="Paginationbar">
       <a href="#" onClick={() => clickFirst()}>
         first
       </a>
@@ -176,13 +177,24 @@ const TodoList: React.FC<ToDoListType> = (props) => {
         }}
       />
     ) : current <= list.length ? (
-      <li key={index}>
-        {list[index].textValue}
-        {list[index].time}
-        <a href="#" onClick={() => setToEdit(index)}>
+      <li
+        className={
+          index >= (current - 1) * 10 && index < current * 10
+            ? "listitem"
+            : "hidden"
+        }
+        key={index}
+      >
+        <p className="text">{list[index].textValue}</p>
+        <p className="time">{list[index].time}</p>
+        <a className="Edit" href="#" onClick={() => setToEdit(index)}>
           編集
         </a>
-        <a href="#" onClick={() => deleteItem(list[index].textValue)}>
+        <a
+          className="Delete"
+          href="#"
+          onClick={() => deleteItem(list[index].textValue)}
+        >
           ×
         </a>
       </li>
